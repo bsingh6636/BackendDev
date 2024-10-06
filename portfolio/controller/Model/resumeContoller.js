@@ -8,6 +8,10 @@ export const addResumeLink = async (req, res) => {
     else return res.status(200).send(newResumeLink) 
 }
 
+export const viewResumeLink = async ( req , res ) =>{
+    const item = await Resume.findOne();
+    return res.status(200).json(item);
+}
 
 export const updateRsumeLink = async (req, res) => {
     const { newResumeLink } = req.body;
