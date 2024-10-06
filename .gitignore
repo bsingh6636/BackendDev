@@ -1,0 +1,10 @@
+.env
+/node_module
+node_module
+
+# Ignore .env file
+
+config.env
+
+# Ignore node_modules directory
+/node_modules/
