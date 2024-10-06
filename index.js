@@ -40,8 +40,8 @@ app.use(bodyParser.json());
 //   });
 // });
 
-app.use('/api/resume',resumeRouter)
-  
+app.use('/api/',resumeRouter)
+  console.log('hi')
 mongoConnection()
   .then(()=>{
     console.log('Database connected');

@@ -4,9 +4,9 @@ import { addResumeLink, updateRsumeLink, viewResumeLink } from '../controller/Mo
 const router = express.Router();
 
 //resume router
-router.get('/' , viewResumeLink)
-router.patch('/', updateRsumeLink);
-router.post('/' , addResumeLink)
+router.get('/resume' , viewResumeLink)
+router.patch('/resume', updateRsumeLink);
+router.post('/resume' , addResumeLink)
 
 
 export default router;
