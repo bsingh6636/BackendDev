@@ -15,8 +15,7 @@ app.use(cors({
 app.use(bodyParser.json());
 
 
-app.use('/api/', resumeRouter)
-console.log('hi')
+app.use('/api', resumeRouter)
 mongoConnection()
   .then(() => {
     console.log('Database connected')

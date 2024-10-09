@@ -8,5 +8,5 @@ const router = express.Router();
 router.get('/resume', viewResumeLink)
 router.patch('/resume', updateRsumeLink);
 router.post('/resume', addResumeLink)
-router.post('contact', SendformData )
+router.post('/contact', SendformData )
 export default router;
