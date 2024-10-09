@@ -1,5 +1,4 @@
 import express from 'express';
-import nodemailer from 'nodemailer';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoConnection from './dbConnection.js';
@@ -10,7 +9,9 @@ config({
   path: './config.env'
 })
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 app.use(bodyParser.json());
 
 
