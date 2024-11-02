@@ -1,8 +1,11 @@
 
 import nodemailer from 'nodemailer';
 export const SendformData = (req, res) => {
-  console.log('hi')
   const { name, email, message } = req.body;
+  if (!name) return res.status(400).send('Name is required');
+  if (!email) return res.status(400).send('Email is required');
+  if (!message) return res.status(400).send('Message is required');
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
