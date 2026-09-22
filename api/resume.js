@@ -65,6 +65,7 @@ export default async function handler(req, res) {
 
   // GET: Fetch latest resume URL
   if (req.method === 'GET') {
+    res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
     try {
       await connectDb();
       if (mongoose.connection.readyState === 1) {
