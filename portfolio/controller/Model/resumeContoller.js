@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { Resume } from "../../model/ResumeSchema.js";
-import mongoConnection from "../../dbConnection.js";
+import mongoConnection from "../../../dbConnection.js";
 
 const DEFAULT_RESUME = '/resume.pdf';
 

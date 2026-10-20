@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import { config } from 'dotenv';
 import resumeRouter from './portfolio/routers/portfolioRouter.js';
+import { serveDomain3 } from './lib/domain3.js';
 
 config();
 
@@ -22,6 +23,9 @@ const allowedOrigins = [
 ];
 
 const app = express();
+app.use(async (req, res, next) => {
+  if (!await serveDomain3(req, res)) next();
+});
 app.use(cors({
   origin: function (origin, callback) {
     if (

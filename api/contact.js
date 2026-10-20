@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { serveDomain3 } from '../lib/domain3.js';
 
 const ALLOWED_ORIGINS = [
   'https://brijeshhq.com',
@@ -35,6 +36,7 @@ function applyCors(req, res) {
 }
 
 export default async function handler(req, res) {
+  if (await serveDomain3(req, res)) return;
   applyCors(req, res);
 
   if (req.method === 'OPTIONS') {
