@@ -61,6 +61,4 @@ if (!process.env.VERCEL) {
   });
 }
 
-export default (req, res) => {
-  return app(req, res);
-};
+export default app;
