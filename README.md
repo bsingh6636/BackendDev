@@ -1,5 +1,10 @@
 # BackendDev
 
+Requests to `hamrochalchitra.online` and `www.hamrochalchitra.online` return a
+302 browser redirect to `https://www.subsnepal.com/items`. Every path redirects
+to that exact URL; the original path and query are discarded. This is handled
+before the API endpoints on Vercel and before other middleware in Express.
+
 For requests whose `Host` is `faphouse3.com` or `www.faphouse3.com`, the backend
 calls the deployed Lambda and serves its response directly, including HTML,
 assets, and the `/api/track` beacon. The path, query string, method, body, and

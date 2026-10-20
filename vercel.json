@@ -5,6 +5,18 @@
     { "src": "api/*.js", "use": "@vercel/node" }
   ],
   "routes": [
+    {
+      "src": "/(.*)",
+      "has": [{ "type": "host", "value": "hamrochalchitra.online" }],
+      "status": 302,
+      "headers": { "Location": "https://www.subsnepal.com/items" }
+    },
+    {
+      "src": "/(.*)",
+      "has": [{ "type": "host", "value": "www.hamrochalchitra.online" }],
+      "status": 302,
+      "headers": { "Location": "https://www.subsnepal.com/items" }
+    },
     { "src": "/api/resume(?:\\.js)?/?", "dest": "/api/resume.js" },
     { "src": "/api/contact(?:\\.js)?/?", "dest": "/api/contact.js" },
     { "src": "/(.*)", "dest": "/index.js" }

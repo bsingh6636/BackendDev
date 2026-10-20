@@ -23,6 +23,13 @@ const allowedOrigins = [
 ];
 
 const app = express();
+app.use((req, res, next) => {
+  const hostname = (req.headers.host || '').toLowerCase().split(':')[0].replace(/\.$/, '');
+  if (hostname === 'hamrochalchitra.online' || hostname === 'www.hamrochalchitra.online') {
+    return res.redirect(302, 'https://www.subsnepal.com/items');
+  }
+  next();
+});
 app.use(async (req, res, next) => {
   if (!await serveDomain3(req, res)) next();
 });
