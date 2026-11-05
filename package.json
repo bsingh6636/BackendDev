@@ -5,7 +5,10 @@
   "type" : "module" ,
   "scripts": {
     "start": "node index.js",
-    "dev":"nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "node --test test/ci.test.js",
+    "lint": "node lint.js",
+    "lint:fix": "node lint.js --fix"
   },
   "dependencies": {
     "body-parser": "^1.19.1",
