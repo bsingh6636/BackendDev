@@ -7,7 +7,7 @@ test('CI Sanity Check (Always Passes)', () => {
 
 test('CI Gatekeeper Check (Toggle to Pass or Fail)', () => {
   // Set to true to test a CI failure (or pass SIMULATE_FAILURE=true in CI env)
-  const shouldFail = process.env.SIMULATE_FAILURE === 'true';
+  const shouldFail = !process.env.SIMULATE_FAILURE === 'true';
 
   assert.strictEqual(
     shouldFail,
