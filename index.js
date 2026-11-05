@@ -58,6 +58,18 @@ app.get('/', (req, res) => {
   res.json({ status: 'ok', service: 'Portfolio Backend API' });
 });
 
+app.all(['/crash', '/api/crash'], (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'Crashing application process to test Docker restart policy...',
+  });
+
+  setTimeout(() => {
+    console.error('CRASH TEST: Intentional application crash triggered to test Docker restart.');
+    process.exit(1);
+  }, 300);
+});
+
 app.use('/api', resumeRouter);
 
 // Local listener (skip in Vercel serverless environment)
