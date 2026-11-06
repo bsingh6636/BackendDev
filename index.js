@@ -55,7 +55,7 @@ app.use(cors({
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.json({ status: 'ok', service: 'Portfolio Backend API' });
+  res.json({ status: 'ok', service: 'Portfolio Backend API' , cicd : 'working' });
 });
 
 app.all(['/crash', '/api/crash'], (req, res) => {
